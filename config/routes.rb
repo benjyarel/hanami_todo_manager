@@ -5,5 +5,6 @@ module HanamiTodoManager
     root to: "home.show"
 
     get "/tasks", to: 'tasks.index'
+    get "/tasks/:id", to: "tasks.show"
   end
 end
