@@ -15,6 +15,6 @@ RSpec.describe "GET /tasks", type: [:request, :database] do
     response_body = JSON.parse(last_response.body)
 
     expect(response_body.size).to eq(2)
-    expect(response_body.first).to eq({'title' =>  "Learn Hanami 2.0", 'description' =>  "Because it's looking fun to play with"})
+    expect(response_body.first).to eq({'title' =>  "Learn Hanami 2.0", 'description' =>  "Because it's looking fun to play with", "due_date" => nil})
   end
 end
