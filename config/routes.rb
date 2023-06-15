@@ -3,5 +3,7 @@
 module HanamiTodoManager
   class Routes < Hanami::Routes
     root to: "home.show"
+
+    get "/tasks", to: 'tasks.index'
   end
 end
