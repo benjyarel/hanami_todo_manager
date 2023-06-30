@@ -1,7 +1,7 @@
 module HanamiTodoManager
   module Actions
     module Home
-      class Show <HanamiTodoManager::Action
+      class Show < HanamiTodoManager::Action
         def handle(*, response)
           response.body = self.class.name
         end

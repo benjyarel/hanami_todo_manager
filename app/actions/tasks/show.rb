@@ -4,11 +4,11 @@ module HanamiTodoManager
   module Actions
     module Tasks
       class Show < HanamiTodoManager::Action
-      include Deps["persistence.rom"]
-       
-      params do
-        required(:id).value(:integer)
-      end
+        include Deps['persistence.rom']
+
+        params do
+          required(:id).value(:integer)
+        end
 
         def handle(request, response)
           requested_task_id = request.params[:id]
@@ -27,7 +27,7 @@ module HanamiTodoManager
 
         def not_found(response, task_id)
           response.format = :json
-          response.body = {error: "Cannot find task with id #{task_id}"}.to_json
+          response.body = { error: "Cannot find task with id #{task_id}" }.to_json
           response.status = 404
         end
       end
