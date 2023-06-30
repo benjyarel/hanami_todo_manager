@@ -13,7 +13,7 @@ module HanamiTodoManager
       end
 
         def handle(request, response)
-          p params
+          p request.params
         end
       end
     end
