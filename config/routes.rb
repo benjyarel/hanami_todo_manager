@@ -2,9 +2,10 @@
 
 module HanamiTodoManager
   class Routes < Hanami::Routes
-    root to: "home.show"
+    root to: 'home.show'
 
-    get "/tasks", to: 'tasks.index'
-    get "/tasks/:id", to: "tasks.show"
+    get '/tasks', to: 'tasks.index'
+    get '/tasks/:id', to: 'tasks.show'
+    post '/tasks', to: 'tasks.create'
   end
 end
