@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module HanamiTodoManager
   module Actions
     module Tasks
-      class Index <HanamiTodoManager::Action
-        include Deps["persistence.rom"]
+      class Index < HanamiTodoManager::Action
+        include Deps['persistence.rom']
 
-        def handle(params, response)
+        def handle(_params, response)
           tasks = rom.relations[:tasks].select(:title, :description, :due_date).to_a
 
           response.format = :json

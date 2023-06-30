@@ -4,8 +4,8 @@ module HanamiTodoManager
   module Actions
     module Tasks
       class Create < HanamiTodoManager::Action
-      include Deps["persistence.rom"]
-       
+        include Deps['persistence.rom']
+
         params do
           required(:task).hash do
             required(:title).value(:string)

@@ -12,6 +12,6 @@ ROM::SQL.migration do
   end
 end
 
-# then run by 
+# then run by
 # bundle exec rake db:migrate
 # HANAMI_ENV=test bundle exec rake db:migrate
