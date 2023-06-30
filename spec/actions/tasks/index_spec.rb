@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'GET /tasks', type: %i[request database] do
   let(:tasks) { app['persistence.rom'].relations[:tasks] }
 

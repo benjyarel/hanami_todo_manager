@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module HanamiTodoManager
   module Actions
     module Home
