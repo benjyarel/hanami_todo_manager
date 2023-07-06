@@ -2,17 +2,13 @@
 
 RSpec.describe HanamiTodoManager::Actions::Tasks::Create, type: %i[request database] do
   describe 'POST tasks/' do
-    let(:request_headers) do
-      { 'HTTP_ACCEPT' => 'application/json', 'CONTENT_TYPE' => 'application/json' }
-    end
-
     context 'given valid params' do
       let(:params) do
         { task: { title: 'Be better at coding', description: 'Wow', due_date: Time.now } }
       end
 
       it 'creates a task' do
-        post '/tasks', params.to_json, request_headers
+        post '/tasks', params
 
         expect(last_response).to be_created
       end
@@ -24,7 +20,7 @@ RSpec.describe HanamiTodoManager::Actions::Tasks::Create, type: %i[request datab
       end
 
       it 'returns 422 unprocessable' do
-        post '/tasks', params.to_json, request_headers
+        post '/tasks', params
 
         expect(last_response).to be_unprocessable
       end
