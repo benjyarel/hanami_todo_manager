@@ -16,9 +16,8 @@ module HanamiTodoManager
             requested_task_id = request.params[:id]
 
             task = find_task(requested_task_id)
-            delete_task(task)
 
-            task? succes_response(response, requested_task_id) : error_response(request, response, 400)
+            task ? delete_task(task) : error_response(request, response, 400)
    
           end
 
@@ -29,11 +28,7 @@ module HanamiTodoManager
         end
 
         def delete_task(task)
-          p "before"
-          p rom.relations[:tasks]
-          task.delete
-          p "after"
-          p rom.relations[:tasks]
+          #to be implemented
         end
 
         def succes_response(response, task_id)
