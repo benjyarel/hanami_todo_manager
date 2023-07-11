@@ -6,6 +6,7 @@ module HanamiTodoManager
 
     get '/tasks', to: 'tasks.index'
     get '/tasks/:id', to: 'tasks.show'
+    delete '/tasks/:id', to: 'tasks.destroy'
     post '/tasks', to: 'tasks.create'
   end
 end
