@@ -16,7 +16,6 @@ module HanamiTodoManager
             requested_task_id = request.params[:id]
 
             task = find_task(requested_task_id)
-            
 
             task ? delete_task(task) : error_response(request, response, 400)
    
